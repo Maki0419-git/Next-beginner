@@ -1,16 +1,21 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import NavBar from "../comps/NavBar.jsx";
-import Footer from "../comps/Footer.jsx";
+import Link from "next/link"
 export default function Home() {
   return (
-    <div>
-      <h1>My Home</h1>
-      <p>Occaecat proident ad nostrud nulla qui tempor sint nostrud culpa ut velit deserunt consequat. Nostrud eu ut id est sunt. Adipisicing et ex incididunt est aliqua velit et officia non anim est cillum commodo. Elit sunt pariatur duis amet.</p>
-      <p>Adipisicing mollit excepteur mollit laborum ex eiusmod minim. Laboris irure aliqua in tempor dolore cupidatat do aliquip ea voluptate ut do minim. Sit elit id quis consequat. Aliquip non et et culpa esse laboris commodo voluptate magna nostrud. Sunt laborum ea exercitation ea. Anim adipisicing tempor ad aliquip pariatur culpa enim.Laboris sint eu deserunt voluptate quis. In ut veniam dolore ex occaecat minim. Non mollit sint labore cupidatat culpa enim ex. Ullamco sint labore cupidatat nulla cillum non. Aliqua dolore culpa Lorem ea exercitation sit tempor aliquip culpa.</p>
-
-    </div>
-
+    <>
+      <Head>
+        <title>Yoshino List | Home</title>
+        <meta name="description" content=" this is Yoshino List's homepage" />
+      </Head>
+      <div>
+        <h1 className={styles.title}>Homepage</h1>
+        <p className={styles.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi impedit suscipit architecto, odio inventore nostrum non neque dicta. Quam magni accusantium culpa distinctio tempore iure accusamus, dolorem nobis odit.</p>
+        <p className={styles.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi impedit suscipit architecto, odio inventore nostrum non neque dicta. Quam magni accusantium culpa distinctio tempore iure accusamus, dolorem nobis odit.</p>
+        <Link href="/yoshino/">
+          <a className={styles.btn}>See Ninja Listing</a>
+        </Link>
+      </div>
+    </>
   )
 }
