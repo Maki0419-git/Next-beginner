@@ -27,10 +27,16 @@ const Details = ({ users }) => {
     return (
         <div>
             <h1>Details Page</h1>
+            {console.log("456")}
+            {console.log("456")}
+            {console.log("456")}
+            {console.log("456")}
             <h2>{users.name}</h2>
             <p>{users.email}</p>
             <p>{users.website}</p>
             <p>Fugiat reprehenderit duis fugiat Lorem ea do enim reprehenderit. Sit culpa mollit voluptate eu fugiat. Sit aliqua do nisi deserunt aliquip duis reprehenderit amet duis consectetur laborum proident commodo dolore. Ut excepteur et labore tempor quis aliquip magna.</p>
+            {console.log("456")}
+            {console.log("456")}
         </div>
     )
 }
