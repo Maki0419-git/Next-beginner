@@ -2,14 +2,14 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users?limit=10');
+    const res = await fetch('https://jsonplaceholder.typicode.com/users?limit=5');
     const data = await res.json();
     const paths = data.map(user => {
         return { params: { id: user.id.toString() } }
     })
     return {
         paths,
-        fallback: true,
+        fallback: 'blocking',
     };
 }
 
@@ -29,10 +29,6 @@ export const getStaticProps = async (context) => {
 }
 
 const Details = ({ users }) => {
-    const router = useRouter()
-    if (router.isFallback) {
-        return <h3>Loading</h3>
-    }
     return (
         <div>
             <h1>Details Page</h1>

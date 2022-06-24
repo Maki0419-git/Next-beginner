@@ -2,7 +2,7 @@ import styles from "../../styles/Users.module.css"
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users?limit=10');
+    const res = await fetch('https://jsonplaceholder.typicode.com/users?limit=5');
     const data = await res.json();
     return {
         props: {
