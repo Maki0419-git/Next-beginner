@@ -3,9 +3,18 @@
 import React from 'react'
 
 export const getServerSideProps = async (context) => {
-    const { category } = context.params
-    const res = await fetch(`http://localhost:5000/news?category=${category}`)
-    const news = await res.json()
+
+    const { req, res, query, params: { category } } = context
+    // req: The HTTP IncomingMessage object, with an additional cookies prop, which is an object with string keys mapping to string values of cookies.
+    console.log(req.headers.cookie)
+    res.setHeader('Set-Cookie', ['name=Yoshino'])
+    // query: An object representing the query string.
+    console.log(query)
+    //  params: If this page uses a dynamic route, params contains the route parameters. If the page name is [id].js , then params will look like { id: ... }
+    console.log(category)
+
+    const response = await fetch(`http://localhost:5000/news?category=${category}`)
+    const news = await response.json()
 
     return {
         props: {
