@@ -13,6 +13,7 @@ export const getServerSideProps = async (context) => {
     //  params: If this page uses a dynamic route, params contains the route parameters. If the page name is [id].js , then params will look like { id: ... }
     console.log(category)
 
+
     const response = await fetch(`http://localhost:5000/news?category=${category}`)
     const news = await response.json()
 
